@@ -1,0 +1,9 @@
+{
+'CAACAgIAAxkBAAIDZl8KE0LFOZuUSsH9x3HK7hLOOrvCAAI-AAPtTRoYd8UJ_P4jRAABGgQ':['говноед', 'муравьед смотрит'],
+'CgACAgIAAxkBAAIDUF8KAAFXzjgEzIRltTwsu47FmNRMRQACDwcAAqEruEiwMTOgbnRh2xoE':['ricardo milos', 'рикардо милос'],
+'BAACAgIAAxkBAAIDQl8J9aIulnlvF8XhNpManmhKLJ0nAALVFQACTdMJSN3hAAG7L_OPKBoE':['маты'],
+'#codeforces.com/profile/unrated':['unrated codeforces', 'анрейтед кф'],
+'#youtu.be/dQw4w9WgXcQ':['рикролл', 'rickroll'],
+'AgACAgIAAxkDAAIDNV8J8JBjvYA_d3H2Fpz6BHwCsBWTAAI9rzEbIPNQSJDjP7zcZ7e3uu8ZlS4AAwEAAwIAA20AA8JrAQABGgQ':['megumin', 'мегумин'],
+'#триггер не найден':['триггер не найден']
+}
