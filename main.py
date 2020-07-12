@@ -12,7 +12,7 @@ def get_variants(trig):
     variants = []
     for trigger in triggers2id:
         ind = trigger.find(trig)
-        if ind == -1:
+        if ind == -1 or trigger == TRIGGER_NOT_FOUND:
             continue
         variants.append((ind != 0, len(trigger), trigger))
     variants.sort()
@@ -42,8 +42,11 @@ def get_inline_content(trig, index):
         return telebot.types.InlineQueryResultCachedGif(index, file_id, trig)
     elif typ == 'sticker':
         return telebot.types.InlineQueryResultCachedSticker(index, file_id)
+    elif trig == TRIGGER_NOT_FOUND:
+        msg = telebot.types.InputTextMessageContent(get_text_from_id(file_id))
+        return telebot.types.InlineQueryResultArticle(index, trig, msg)
     elif typ == 'text':
-        thumb = 'https://i.imgur.com/O2yehMw.png'
+        thumb = TEXT_THUMB_URL
         text = get_text_from_id(file_id)
         message = telebot.types.InputTextMessageContent(
             text, parse_mode='Markdown',
@@ -52,7 +55,7 @@ def get_inline_content(trig, index):
                                                       description=text,
                                                       thumb_url=thumb)
     elif typ == 'link':
-        thumb = 'https://i.imgur.com/tokK703.png'
+        thumb = LINK_THUMB_URL
         link = get_text_from_id(file_id)
         message = telebot.types.InputTextMessageContent(
             link, parse_mode='Markdown',
@@ -71,7 +74,7 @@ def inline(query):
     trig = query.query.lower()
     variants = get_variants(trig)
     if len(variants) == 0:
-        variants.append('триггер не найден')
+        variants.append(TRIGGER_NOT_FOUND)
     content = []
     content_file_ids = set()
     for trigger in variants:
@@ -86,4 +89,4 @@ def inline(query):
 
 
 if __name__ == '__main__':
-    bot.infinity_polling(timeout=10)
+    bot.infinity_polling(timeout=10, none_stop=True)

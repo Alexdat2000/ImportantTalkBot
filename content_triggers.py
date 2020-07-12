@@ -1,6 +1,10 @@
 import ast
 import re
 
+TRIGGER_NOT_FOUND = 'триггер не найден'
+LINK_THUMB_URL = 'https://i.imgur.com/tokK703.png'
+TEXT_THUMB_URL = 'https://i.imgur.com/O2yehMw.png'
+
 
 def calc_loaded_triggers(id2triggers):
     triggers2id = dict()
